@@ -10,7 +10,7 @@ o6hnre0YbOBE8q1GAE28DkhjoC+GwZyYFwIDAQAB\
 -----END RSA PUBLIC KEY-----");
 
 let encode = function(message){
-	var buffer = forge.util.createBuffer('256348950602', 'utf8');
+	var buffer = forge.util.createBuffer(message, 'utf8');
 var bytes = buffer.getBytes();
 
 // encrypt data with a public key using RSAES PKCS#1 v1.5
@@ -21,6 +21,8 @@ var b64Encoded = forge.util.encode64(encrypted);
 console.log(b64Encoded)	
 return b64Encoded
 }
+
+console.log(encode(553927));
 
 module.exports = {
 	encode : encode
